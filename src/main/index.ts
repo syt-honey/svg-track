@@ -24,6 +24,9 @@ function createWindow(): void {
   mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: false })
   mainWindow.setAlwaysOnTop(true, 'pop-up-menu', 1)
 
+  // use this method to set hidden when app is in mission control
+  mainWindow.setHiddenInMissionControl(true)
+
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })

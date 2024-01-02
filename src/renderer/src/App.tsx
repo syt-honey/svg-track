@@ -23,7 +23,7 @@ function App(): JSX.Element {
     }
   }, [])
 
-  const clear = useCallback(() => {
+  const onClear = useCallback(() => {
     if (svgRef.current) {
       while (svgRef.current.firstChild) {
         svgRef.current.removeChild(svgRef.current.firstChild)
@@ -33,9 +33,10 @@ function App(): JSX.Element {
 
   return (
     <div className="container">
-      <button className="clear-btn" onClick={clear}>
+      <button className="clear-btn" onClick={onClear}>
         Clear
       </button>
+
       <svg ref={svgRef} fill={board?.fill} stroke={board?.color} strokeWidth={board?.weight}></svg>
     </div>
   )
